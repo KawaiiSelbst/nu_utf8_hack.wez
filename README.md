@@ -1,5 +1,5 @@
 # Desctiption
-Fix for nushell (or wezterm) wrong interpretation of unicode char + shift chars through kitty protocol
+Fix for nushell (or wezterm) wrong interpretation of unicode letters + shift chars through kitty protocol (in my case is Russian letters)
 
 # Usage
 Add to your config
