@@ -30,11 +30,13 @@ local function utf8_chars(string)
 end
 
 function M.apply_to_config(config)
-
   local char_table = utf8_chars('ЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ')
 
-  config.key_tables[#config.key_tables + 1] = { nu_hack = map(char_table, gen_fixed_send_key) }
-  
+  config.key_tables.nu_hack = map(char_table, gen_fixed_send_key)
+  -- else
+  --   config.key_tables = { nu_hack = map(char_table, gen_fixed_send_key) }
+  -- end
+
   wezterm.on('update-status', function(window, pane)
     local active_key_table = window:active_key_table()
     local fg_proc_name = pane:get_foreground_process_info().name
