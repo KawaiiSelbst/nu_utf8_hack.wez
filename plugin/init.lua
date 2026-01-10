@@ -29,8 +29,8 @@ local function utf8_chars(string)
   return result
 end
 
-function M.apply_to_config(config, char_t)
-  local char_table = utf8_chars(char_t)
+function M.apply_to_config(config, plugin_config)
+  local char_table = utf8_chars(plugin_config.char_table)
 
   if config.key_tables == null then
     config.key_tables = { nu_hack = map(char_table, gen_fixed_send_key) }
