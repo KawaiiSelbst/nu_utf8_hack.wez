@@ -33,7 +33,7 @@ char: ф, code: 0x000444, modifier: KeyModifiers(SHIFT), flags: 0b000001, kind: 
 char: a, code: 0x000061, modifier: KeyModifiers(0x0), flags: 0b000000, kind: Press, state: KeyEventState(0x0)
 char: A, code: 0x000041, modifier: KeyModifiers(SHIFT), flags: 0b000001, kind: Press, state: KeyEventState(0x0)
 ```
-But nushell (and i think lots of software) don't care about it. And awaits and KeyModifier and uppercase character code.
+Nushell (and i think lots of software) don't care about it. And awaits and KeyModifier and uppercase character code.
 
 So if we remap keys to uppercase versions, nushell start read it as uppercase letters input
 ```
