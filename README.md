@@ -1,9 +1,8 @@
+# Desctiption
 Fix for nushell (or wezterm) wrong interpretation of unicode char + shift chars through kitty protocol
 
-## Usage
-
+# Usage
 Add to your config
-
 ```lua
 local nu_utf8_hack = wezterm.plugin.require 'https://github.com/KawaiiSelbst/nu_utf8_hack.wez'
 
