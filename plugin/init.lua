@@ -40,7 +40,8 @@ function M.apply_to_config(config, plugin_config)
 
   wezterm.on('update-status', function(window, pane)
     local active_key_table = window:active_key_table()
-    local fg_proc_name = pane:get_foreground_process_info().name
+    local info = pane:get_foreground_process_info()
+    local fg_proc_name = info and info.name or nil
 
     if fg_proc_name == "nu" and active_key_table ~= "nu_hack" then
       window:perform_action(
