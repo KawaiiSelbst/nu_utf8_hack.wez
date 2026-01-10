@@ -32,10 +32,11 @@ end
 function M.apply_to_config(config)
   local char_table = utf8_chars('ЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ')
 
-  config.key_tables.nu_hack = map(char_table, gen_fixed_send_key)
-  -- else
-  --   config.key_tables = { nu_hack = map(char_table, gen_fixed_send_key) }
-  -- end
+  if config.key_tables == null then
+    config.key_tables = { nu_hack = map(char_table, gen_fixed_send_key) }
+  else
+    config.key_tables.nu_hack = map(char_table, gen_fixed_send_key)
+  end
 
   wezterm.on('update-status', function(window, pane)
     local active_key_table = window:active_key_table()
