@@ -23,7 +23,7 @@ end
 
 local function utf8_chars(string)
   local result = {}
-  for _, code in ut8.codes(string) do
+  for _, code in utf8.codes(string) do
     result[#result + 1] = utf8.char(code)
   end
   return result
@@ -32,7 +32,7 @@ end
 function M.apply_to_config(config, plugin_config)
   local char_table = utf8_chars(plugin_config.char_table)
 
-  if config.key_tables == null then
+  if config.key_tables == nil then
     config.key_tables = { nu_hack = map(char_table, gen_fixed_send_key) }
   else
     config.key_tables.nu_hack = map(char_table, gen_fixed_send_key)
