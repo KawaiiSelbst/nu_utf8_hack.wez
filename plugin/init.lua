@@ -30,7 +30,7 @@ local function utf8_chars(string)
 end
 
 function M.apply_to_config(config, plugin_config)
-  local char_table = utf8_chars(plugin_config["char_table"])
+  local char_table = utf8_chars(plugin_config.char_table)
 
   if config.key_tables == null then
     config.key_tables = { nu_hack = map(char_table, gen_fixed_send_key) }
