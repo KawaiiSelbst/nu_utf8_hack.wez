@@ -14,11 +14,11 @@ nu_utf8_hack.apply_to_config(config, nu_utf8_hackConfig)
 
 # How it works? 
 It registers key_table, with remaps all keys from `char_table` in favor of
-```
-    key = <Letter>,
-    mods = 'SHIFT',
-    action = act.SendKey {
-      key = <Letter>, mods = 'SHIFT'
-    }
+```lua
+key = <Letter>,
+mods = 'SHIFT',
+action = act.SendKey {
+   key = <Letter>, mods = 'SHIFT'
+}
 ```
 and adds callback to event status_update, and check if foreground process name of pane is `nu`, and if then enables key_table with remap, and disable it if foreground process name isn's `nu`
